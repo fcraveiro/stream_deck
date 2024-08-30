@@ -30,6 +30,7 @@ class OBSWebSocketManager {
       },
       onDone: () {
         _channel = null;
+        _controller.add('desconectado');
         onDisconnect?.call();
       },
       onError: onError,

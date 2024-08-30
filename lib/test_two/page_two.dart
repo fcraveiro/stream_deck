@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:stream_deck/lib/notifier.dart';
+import 'package:flutter_view_controller/flutter_view_controller.dart';
 import 'package:stream_deck/test_two/data/scene.dart';
 import 'package:stream_deck/test_two/obs_socket/obs_socket.dart';
 
@@ -15,12 +15,14 @@ class ObsPageControl extends StatefulWidget {
 
 class _ObsPageControlState extends State<ObsPageControl> {
   final OBSWebSocketManager _obsManager = OBSWebSocketManager();
-  final NotifierList<SceneObs> _sceneList = NotifierList([]);
   String? _currentScene;
 
+  final NotifierList<SceneObs> _sceneList = NotifierList();
+  final NotifierList<Widget> _buttonsObs = NotifierList();
   final Notifier<bool> _recordModeEnabled = Notifier(false);
-  final Notifier<bool> _liveModeEnabled = Notifier(false);
   final Notifier<bool> _studioModeEnabled = Notifier(false);
+  final Notifier<bool> _liveModeEnabled = Notifier(false);
+  final Notifier<bool> isConnected = Notifier(true);
 
   @override
   void initState() {
@@ -37,7 +39,25 @@ class _ObsPageControlState extends State<ObsPageControl> {
     }
   }
 
-  void _onMessageReceived(dynamic message) {
+  guardaWidgets() {
+    for (var i = 0; i < 10; i++) {
+      _buttonsObs.add(
+        InkWell(
+          onTap: () => _obsManager.sendCommand('SetCurrentProgramScene', {
+            'sceneName': _sceneList[i].name,
+          }),
+          child: button(false, _sceneList[i].name),
+        ),
+      );
+    }
+  }
+
+  _onMessageReceived(dynamic message) {
+    log("'${message.toString()}'");
+    if (message == "desconectado") {
+      return isConnected.value = false;
+      // log('Message from OBS na pagina 2 : $message');
+    }
     final response = json.decode(message);
     if (response['op'] == 7) {
       _handleCommandResponse(response);
@@ -105,68 +125,82 @@ class _ObsPageControlState extends State<ObsPageControl> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Controle do OBS'),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            const SizedBox(height: 20),
-            const Text('Controles',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 20),
-            _liveModeEnabled.show(
-              (enabled) => Center(
-                child: InkWell(
-                  onTap: () => enabled ? _stopStreaming() : _startStreaming(),
-                  child: button(enabled, 'Live'),
+      body: isConnected.show(
+        (value) => value
+            ? Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: isConnected.value
+                    ? Colors.blue.shade200
+                    : Colors.red.shade200,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    const SizedBox(height: 20),
+                    const Text('Controles',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 20),
+                    _liveModeEnabled.show(
+                      (enabled) => Center(
+                        child: InkWell(
+                          onTap: () =>
+                              enabled ? _stopStreaming() : _startStreaming(),
+                          child: button(enabled, 'Live'),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const SizedBox(height: 10),
+                    _recordModeEnabled.show(
+                      (enabled) => Center(
+                        child: InkWell(
+                          onTap: () => _recordMode(enabled),
+                          child: button(enabled, 'Gravação'),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    _studioModeEnabled.show(
+                      (enabled) => InkWell(
+                        onTap: () => _studioModeOff(!enabled),
+                        child: button(enabled, 'Estúdio'),
+                      ),
+                    ),
+                    _sceneList.show(
+                      (sceneList) => DropdownButton<String>(
+                        value: _currentScene,
+                        hint: const Text('Selecione uma cena'),
+                        onChanged: (String? newScene) {
+                          setState(() {
+                            _currentScene = newScene;
+                          });
+                          if (newScene != null) {
+                            _obsManager.sendCommand('SetCurrentProgramScene', {
+                              'sceneName': newScene,
+                            });
+                          }
+                        },
+                        items: sceneList.map((scene) {
+                          return DropdownMenuItem<String>(
+                            value: scene.name,
+                            child: Text(scene.name),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            _recordModeEnabled.show(
-              (enabled) => Center(
-                child: InkWell(
-                  onTap: () => _recordMode(enabled),
-                  child: button(enabled, 'Gravação'),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            _studioModeEnabled.show(
-              (enabled) => InkWell(
-                onTap: () => _studioModeOff(!enabled),
-                child: button(enabled, 'Estúdio'),
-              ),
-            ),
-            _sceneList.show(
-              (sceneList) => DropdownButton<String>(
-                value: _currentScene,
-                hint: const Text('Selecione uma cena'),
-                onChanged: (String? newScene) {
-                  setState(() {
-                    _currentScene = newScene;
-                  });
-                  if (newScene != null) {
-                    _obsManager.sendCommand('SetCurrentProgramScene', {
-                      'sceneName': newScene,
-                    });
-                  }
-                },
-                items: sceneList.map((scene) {
-                  return DropdownMenuItem<String>(
-                    value: scene.name,
-                    child: Text(scene.name),
-                  );
-                }).toList(),
-              ),
-            ),
-          ],
-        ),
+              )
+            : Container(
+                width: double.infinity,
+                height: double.infinity,
+                alignment: Alignment.center,
+                color: isConnected.value
+                    ? Colors.blue.shade200
+                    : Colors.red.shade200,
+                child: const Text('Desconectado')),
       ),
     );
   }

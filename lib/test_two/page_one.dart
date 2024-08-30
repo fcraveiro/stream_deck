@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:stream_deck/test_two/obs_socket/obs_socket.dart';
 import 'package:stream_deck/test_two/page_two.dart';
@@ -40,7 +39,7 @@ class ObsPageConnectionState extends State<ObsPageConnection> {
 
     _obsManager.connect(
       url,
-      password: password, // Passando a senha para o método connect
+      password: password,
       onConnect: () {
         setState(() {
           _isConnected = true;

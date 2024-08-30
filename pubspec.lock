@@ -107,6 +107,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_view_controller:
+    dependency: "direct main"
+    description:
+      name: flutter_view_controller
+      sha256: "149b83429dec6ba01ce3b7babef487eec2dd364c8f372e0b6f318e90e5f7f691"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.24"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -208,6 +216,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  plug:
+    dependency: transitive
+    description:
+      name: plug
+      sha256: b068710b2ed6b1b4879d7bcdaa2bf13ddec9cf3eced85dbc84974b31a58a6c8c
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -216,6 +232,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+  sizer_plus:
+    dependency: transitive
+    description:
+      name: sizer_plus
+      sha256: b91589fb0b0c8d7617836d2a8ab74ad8f0e64cc8dcc365f8c104a95cfe7fe69c
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   sky_engine:
     dependency: transitive
     description: flutter
