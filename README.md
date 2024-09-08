@@ -63,6 +63,11 @@ O **ChatGPT-4** merece um agradecimento especial por sua ajuda contínua em toda
 
 ### 1.0.0
 
+## Versões Utilizadas
+
+[![Flutter](https://img.shields.io/badge/Flutter-v3.19.6-blue?logo=flutter)](https://flutter.dev)  
+[![Dart](https://img.shields.io/badge/Dart-v3.3.4-blue?logo=dart)](https://dart.dev)
+
 - Primeira versão do projeto com integração básica ao OBS via WebSocket, controle de cenas e gravação.
 
 ---
