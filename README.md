@@ -1,6 +1,8 @@
    ```bash
-## This README was conjured up by the illustrious ChatGPT-4 in a hilariously ironic tone,
- but rest assured, the information is spot-on! 😎✨
+<p align="center" style="font-size: 20px;">
+  This README was conjured up by the illustrious ChatGPT-4 in a hilariously ironic tone,<br>
+  but rest assured, the information is spot-on! 😎✨
+</p>
    ```
 
 
