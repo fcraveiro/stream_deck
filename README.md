@@ -91,7 +91,7 @@ We love contributions! If you have brilliant ideas, found bugs, or want to add n
 
 This project is licensed under the **MIT License**. Feel free to use, copy, modify, merge, and share as you wish. It’s like a buffet at a hotel: if you take it, it’s yours!
 
-<br><br>
+<br>
 
    ```bash
 
@@ -99,7 +99,7 @@ Este README foi magicamente criado pelo grandioso ChatGPT-4 com um tom hilário 
  mas fique tranquilo, as informações estão absolutamente corretas! 😎✨
 
    ```
-<br><br>
+<br>
 
 # 🚀 OBS Studio Stream Deck Controller
 
