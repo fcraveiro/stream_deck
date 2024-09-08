@@ -1,3 +1,14 @@
+   ```bash
+   CREATE TABLE public.store_services (
+      store_id UUID NOT NULL,
+      service_id UUID NOT NULL,
+      PRIMARY KEY (store_id, service_id),
+      FOREIGN KEY (store_id) REFERENCES public.stores(id) ON DELETE CASCADE,
+      FOREIGN KEY (service_id) REFERENCES public.services(id) ON DELETE CASCADE
+   );
+   ```
+
+
 # 🚀 OBS Studio Stream Deck Controller
 
 Welcome to the **OBS Studio Stream Deck Controller** – the project that turns your smartphone into a futuristic remote control for **OBS Studio**. With real-time WebSocket integration, you can finally pull off those impressive broadcasting maneuvers you've always dreamed of (or never thought you'd do).
