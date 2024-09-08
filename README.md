@@ -14,11 +14,11 @@ Welcome to the **OBS Studio Stream Deck Controller** – the project that turns 
 
 ## 🔥 Credits
 
-This project is the cherry on top, crafted with the help of two fabulous AI assistants: **ChatGPT-4** and **GitHub Copilot**. And of course, most of the **Flutter** code was lovingly and painstakingly developed by **Fernando Craveiro**.
+This project is the cherry on top, crafted with the help of two fabulous AI assistants: **ChatGPT-4** and **GitHub Copilot**. And of course, most of the **Flutter** code was lovingly and painstakingly developed by **FCraveiro**.
 
-### Fernando Craveiro 👨‍💻
+### FCraveiro 👨‍💻
 
-- **Flutter Development**: All the magic behind the interface and WebSocket integration was performed by **Fernando Craveiro**, ensuring that your app not only works but dazzles like a digital rock star.
+- **Flutter Development**: All the magic behind the interface and WebSocket integration was performed by **FCraveiro**, ensuring that your app not only works but dazzles like a digital rock star.
 
 ### ChatGPT-4 💡
 
@@ -58,7 +58,7 @@ This project is the cherry on top, crafted with the help of two fabulous AI assi
 
 ## 💻 Tech Stack
 
-- **Fernando Craveiro**: The master of **Flutter**, responsible for all the interface and WebSocket integration implementation. The soul of this project!
+- **FCraveiro**: The master of **Flutter**, responsible for all the interface and WebSocket integration implementation. The soul of this project!
 - **ChatGPT-4**: Your AI partner, providing solutions throughout the development. ❤️
 - **GitHub Copilot**: The code assistant that made coding seem easy (even when it’s not). It sped up the implementation of WebSocket communication.
 - **Flutter**: The framework that brings your app to life and makes everything look fabulous.
@@ -91,7 +91,7 @@ We love contributions! If you have brilliant ideas, found bugs, or want to add n
 
 This project is licensed under the **MIT License**. Feel free to use, copy, modify, merge, and share as you wish. It’s like a buffet at a hotel: if you take it, it’s yours!
 
-<br><br><br><br>
+<br><br>
 
    ```bash
 
@@ -109,11 +109,11 @@ Bem-vindo ao **OBS Studio Stream Deck Controller** – o projeto que transforma 
 
 ## 🔥 Créditos
 
-Este projeto foi a cereja do bolo criada com a ajuda de dois assistentes de IA fabulosos: **ChatGPT-4** e **GitHub Copilot**. E, claro, a maior parte do código em **Flutter** foi escrita com amor e suor por **Fernando Craveiro**.
+Este projeto foi a cereja do bolo criada com a ajuda de dois assistentes de IA fabulosos: **ChatGPT-4** e **GitHub Copilot**. E, claro, a maior parte do código em **Flutter** foi escrita com amor e suor por **FCraveiro**.
 
-### Fernando Craveiro 👨‍💻
+### FCraveiro 👨‍💻
 
-- **Desenvolvimento em Flutter**: Toda a mágica por trás da interface e da integração com WebSocket foi realizada por **Fernando Craveiro**, garantindo que seu aplicativo não só funcione, mas brilhe como uma estrela do rock digital.
+- **Desenvolvimento em Flutter**: Toda a mágica por trás da interface e da integração com WebSocket foi realizada por **FCraveiro**, garantindo que seu aplicativo não só funcione, mas brilhe como uma estrela do rock digital.
 
 ### ChatGPT-4 💡
 
@@ -153,7 +153,7 @@ O **ChatGPT-4** merece uma ovação de pé por sua ajuda constante em cada etapa
 
 ## 💻 Stack Tecnológica
 
-- **Fernando Craveiro**: O mestre da **Flutter**, responsável por toda a implementação da interface e da integração com o WebSocket. A alma deste projeto!
+- **FCraveiro**: O mestre da **Flutter**, responsável por toda a implementação da interface e da integração com o WebSocket. A alma deste projeto!
 - **ChatGPT-4**: O parceiro de IA que forneceu soluções e fez com que o desenvolvimento fosse um passeio no parque (com alguns desafios pelo caminho). ❤️
 - **GitHub Copilot**: O assistente de código que fez parecer que codificar é fácil (mesmo quando não é). Ele acelerou a implementação da comunicação WebSocket.
 - **Flutter**: O framework que dá vida ao seu aplicativo e faz tudo parecer fabuloso.
