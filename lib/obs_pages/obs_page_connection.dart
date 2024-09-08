@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:stream_deck/test_two/obs_socket/obs_socket.dart';
-import 'package:stream_deck/test_two/page_two.dart';
+import 'package:stream_deck/obs_socket/obs_socket.dart';
+import 'package:stream_deck/obs_pages/obs_page_control.dart';
 
 class ObsPageConnection extends StatefulWidget {
   const ObsPageConnection({super.key});
@@ -61,7 +61,9 @@ class ObsPageConnectionState extends State<ObsPageConnection> {
   _goToPageControl() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const ObsPageControl(),
+        builder: (context) => ObsPageControlView(
+          controller: ObsPageControlController(),
+        ),
       ),
     );
   }

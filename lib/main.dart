@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stream_deck/test_two/page_one.dart';
+import 'package:stream_deck/obs_pages/obs_page_connection.dart';
 
 void main() {
   runApp(const MyApp());
