@@ -1,8 +1,8 @@
    ```bash
-<p align="center" style="font-size: 20px;">
-  This README was conjured up by the illustrious ChatGPT-4 in a hilariously ironic tone,<br>
-  but rest assured, the information is spot-on! 😎✨
-</p>
+
+<center><h3>This README was conjured up by the illustrious ChatGPT-4 in a hilariously ironic tone,</h3></center>
+<center><h3>but rest assured, the information is spot-on! 😎✨</h3></center>
+
    ```
 
 
