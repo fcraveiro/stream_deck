@@ -1,11 +1,5 @@
    ```bash
-   CREATE TABLE public.store_services (
-      store_id UUID NOT NULL,
-      service_id UUID NOT NULL,
-      PRIMARY KEY (store_id, service_id),
-      FOREIGN KEY (store_id) REFERENCES public.stores(id) ON DELETE CASCADE,
-      FOREIGN KEY (service_id) REFERENCES public.services(id) ON DELETE CASCADE
-   );
+This README was conjured up by the illustrious ChatGPT-4 in a hilariously ironic tone, but rest assured, the information is spot-on! 😎✨
    ```
 
 
